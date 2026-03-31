@@ -1,0 +1,177 @@
+:: StoryTitle
+Twine Minigame 3
+
+
+:: StoryData
+{
+  "ifid": "DD22558F-7BDC-4046-8EC5-42F29EA4E9EC",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: ... {"position":"1175,950","size":"100,100"}
+<<set $key to 0>>
+<<set $flashlight to 0>>
+<<set $steak to 0>>
+Guess you'll have to find a way elsewhere. You'll be here for who knows how long, try to make the most of it.
+
+''GAME OVER''
+[[Retry?->The Red Door]]
+
+
+:: But... {"position":"675,325","size":"100,100"}
+<<set $flashlight to 1>>
+You spot a flashlight on the floor, conviently having batteries already inside. You take it with you for safe keeping and [[go back.->Continue]]
+
+
+:: Continue {"position":"800,325","size":"100,100"}
+Which door will you open?
+
+[[The Red Door]]
+[[The Yellow Door]]
+[[The Blue Door]]
+
+
+:: Distract Doug {"position":"750,825","size":"100,100"}
+<<set $key to $key +1>>
+You remember the steak you took and take it out and throw it towards Doug. It sniffs the steak before chowing down on it. You take the chance to grab the key and [[flee the room.->The Red Door]]
+
+
+:: I got that {"position":"875,825","size":"100,100"}
+<<set $key to 0>>
+<<set $flashlight to 0>>
+<<set $steak to 0>>
+Doug chomped you as soon as you tried running. I don't know what you were expecting.
+''GAMEOVER''
+[[Retry?->The Red Door]]
+
+
+:: Investigate? {"position":"550,700","size":"100,100"}
+<<set $steak to 1>>
+Opening the fridge, all you find is a steak that's surprisingly in good condition. You feel like it's important for some reason, so you put it in a ziploc bag and [[leave.->The Red Door]]
+
+
+:: Room 1 {"position":"550,575","size":"100,100"}
+You open the door to an old freezer room. The place looks run-down, and only one light is working... which happens to be shining on a refrigerator.
+[[Investigate?]]
+[[Go back->The Red Door]] 
+
+
+:: Room 2 {"position":"675,575","size":"100,100"}
+You open the door to a completely red room. The second you close the door, however, the walls start to close in, and when you go back, you see that the door completely vanished. [[You're stuck here with no way out.]]
+
+
+:: Room 3 {"position":"800,575","size":"100,100"}
+You open the door to an ancient room that looks like it belongs in a dungeon. The walls are made out of stone, and there's only a few torches lighting the room up. There's another door with a sign: ''BEWARE OF DOUG''
+Do you enter?
+[[Yay]]
+[[Nay->The Red Door]]
+
+
+:: Room 4 {"position":"925,575","size":"100,100"}
+You open the door and immediately see that it's fake. The brick wall behind it has a paper taped onto it, [[with a poorly drawn scribble.]]
+
+
+:: Room 5 {"position":"1050,575","size":"100,100"}
+<<if $flashlight == 1>>
+You open the door to a place shrouded in darkness. You take out the flashlight from earlier and shine the light around, not seeing anything in the area. You put the light on the floor in front of you and [[search for anything useful.]]
+<<else>>
+You open the door to a place shrouded in darkness. You try to search for anything, but you can't even see your own hands in front of you, nor can you find any walls. After a couple minutes of wandering & tripping on yourself, you give up and [[leave->The Red Door]] before you go too far from the door.
+<</if>>
+
+
+:: Start {"position":"800,200","size":"100,100"}
+<!-- I think I had much more fun making this minigame with the new variables and if statements, they opened up much more room for creativity! -->
+<<set $key to 0>>
+<<set $flashlight to 0>>
+<<set $steak to 0>>
+
+You find yourself in a small room. There isn't much inside, but there's three doors.
+[[Continue]]
+
+
+:: Sure, why not? {"position":"1175,700","size":"100,100"}
+<!-- This sequence was inspired by that SpongeBob scene where Squidward's alone in the void -->
+The second you pull the lever, the whole room turns white. You realize how huge this room is, if you can call it one. It felt more like an empty void.
+While taking it in, however, you see the door - at least, where it was. Looks like it disappeared with the darkness as you flipped the switch. No problem, [[just flip the switch back and..]]
+
+
+:: The Blue Door {"position":"675,450","size":"100,100"}
+You open the blue door with suspense, only to find a restroom. Although it's convient, you don't feel the need to go.
+[[But...]]
+
+
+:: The Red Door {"position":"800,450","size":"100,100"}
+You find yourself in a short corridor with another 5 doors.
+Which room will you view?
+[[Room 1]]
+[[Room 2]]
+[[Room 3]]
+[[Room 4]]
+[[Room 5]]
+[[Go Back->Continue]] 
+
+
+:: The Yellow Door {"position":"925,450","size":"100,100"}
+<<if $key > 1>>
+The yellow door has 2 locks on it, and you notice light peeking underneath. You have a hinch that this is your way out.
+You use your keys to open the two locks. You open the door and [[get hit with a bright light...]]
+
+
+<<else>>
+The yellow door has 2 locks on it, and you notice light peeking underneath. You have a hinch that this is your way out.
+[[look elsewhere->Continue]]
+<</if>>
+
+
+:: Yay {"position":"800,700","size":"100,100"}
+<<if $steak == 1>>
+You quietly enter the room and see Doug, a large... beast of sorts dozing off, its body taking up half the space inside. It was chained to a large stake, and on it just so happened to be a key.
+Unfortunately, the creaky door woke Doug up instantly, growling at you. The stake - along with the key - was a few feet away from it. Do you dare try to grab the key?
+[[I got that]]
+[[Distract Doug]]
+[[NOPE.->Room 3]]
+<<else>>
+You quietly enter the room and see Doug, a large... beast of sorts dozing off, its body taking up half the space inside. It was chained to a large stake, and on it just so happened to be a key.
+Unfortunately, the creaky door woke Doug up instantly, growling at you. The stake - along with the key - was a few feet away from it. Do you dare try to grab the key?
+[[I got that]]
+[[NOPE.->Room 3]]
+<</if>>
+
+
+:: You're stuck here with no way out. {"position":"675,700","size":"100,100"}
+<<set $key to 0>>
+<<set $flashlight to 0>>
+<<set $steak to 0>>
+You end up getting crushed by the walls. Who thought this room was a good idea?
+''GAME OVER''
+[[Retry?->The Red Door]]
+
+
+:: get hit with a bright light... {"position":"1050,450","size":"100,100"}
+The sun shines on you as you finally leave this strange place. You find yourself on a grassy hill not far from your city. You turn around to see whatever building you were stuck in, but to your surprise, nothing's there. Whatever place you were in vanished.
+A hundred questions run through your head, all of them likely never getting answered. But... maybe it's better not trying to wrap your head around it. What matters now is that you're free.
+
+''YOU WON!''
+
+
+:: just flip the switch back and.. {"position":"1175,825","size":"100,100"}
+...The switch won't budge. Part of it snapped off after you pulled it. Without it, how will you get out?
+[[...]]
+
+
+:: search for anything useful. {"position":"1050,700","size":"100,100"}
+<<set $key to $key + 1>>
+Just as you feel like giving up, you notice a small table in the distance. Going towards it, you find a key alongside a switch. You take the key, but the switch intrigues you.
+Flip the switch?
+[[Sure, why not?]]
+[[Nah, I'm outta here!->The Red Door]]
+
+
+:: with a poorly drawn scribble. {"position":"925,700","size":"100,100"}
+<!-- I did want to add more images, mainly drawings for each game over and when you win, but I scrapped it for the sake of time. -->
+[img[https://i.postimg.cc/Wzh6hSVC/Gt-DNOr1bw-AA7JCp.jpg]]
+[[You sigh and go back.->The Red Door]]
