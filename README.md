@@ -1,3 +1,4 @@
 # Twine Minigame 3
 ## Devlog
-Write your Devlog here.
+In my game, there are 3 variables and quite a few if/else statements. Almost every if/else statement involves the variables and how much their value is, and this determines whether you progress in the game. For example, 2 variables($flashlight and $steak) must equal one in two rooms to be able to get the two keys(Also a variable) in Rooms 3 & 5. If $flashlight doesn't equal one, you can't enter Room 5, and if $steak doesn't equal one, you get a game over trying to progress in Room 3. This can also lead the player to backtrack & explore other areas to find these items if they don't have them.
+When I was making new areas, deciding to use if/else statements or new passages depended on the purpose of the area. Almost every passage where variables come into play uses if and else statements. The biggest example is the yellow door, as you need keys to unlock it and win the game. Because there are two keys, there are if statements for if you have one or more than one key.
